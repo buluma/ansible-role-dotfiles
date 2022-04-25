@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Dotfile installation for UNIX/Linux.
+  homepage: https://buluma.github.io/
+  topics: development, system, dotfiles, configuration, ansible, molecule, tox, playbook, hacktoberfest

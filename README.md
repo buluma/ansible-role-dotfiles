@@ -1,56 +1,93 @@
-# Ansible Role: Dotfiles
+# [dotfiles](#dotfiles)
 
-[![CI](https://github.com/geerlingguy/ansible-role-dotfiles/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-dotfiles/actions?query=workflow%3ACI)
+Dotfile installation for UNIX/Linux.
 
-Installs a set of dotfiles from a given Git repository. By default, it will install my (geerlingguy's) [dotfiles](https://github.com/geerlingguy/dotfiles), but you can use any set of dotfiles you'd like, as long as they follow a conventional format.
+|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|---------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-dotfiles/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-dotfiles/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-dotfiles/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-dotfiles)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/dotfiles)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/dotfiles)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/pulls/)|
 
-## Requirements
+## [Example Playbook](#example-playbook)
 
-Requires `git` on the managed machine (you can easily install it with `geerlingguy.git` if required).
+This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+```yaml
+---
+- name: Converge
+  hosts: all
+  become: true
 
-## Role Variables
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
 
-Available variables are listed below, along with default values (see `defaults/main.yml`):
+  roles:
+    - role: buluma.git
+    - role: geerlingguy.dotfiles
+```
 
-    dotfiles_repo: "https://github.com/geerlingguy/dotfiles.git"
-    dotfiles_repo_version: master
 
-The git repository and branch/tag/commit hash to use for retrieving dotfiles. Dotfiles should generally be laid out within the root directory of the repository.
+## [Role Variables](#role-variables)
 
-    dotfiles_repo_accept_hostkey: false
+The default values for the variables are set in `defaults/main.yml`:
+```yaml
+---
+# TODO: localise
+dotfiles_repo: "https://github.com/buluma/dotfiles.git"
+dotfiles_repo_version: master
+dotfiles_repo_accept_hostkey: false
+dotfiles_repo_local_destination: "~/Documents/dotfiles"
 
-Add the hostkey for the repo url if not already added. If ssh_opts contains "-o StrictHostKeyChecking=no", this parameter is ignored.
+dotfiles_home: "~"
+dotfiles_files:
+  - .zshrc
+  - .gitignore
+  - .inputrc
+  - .vimrc
+```
 
-    dotfiles_repo_local_destination: "~/Documents/dotfiles"
+## [Requirements](#requirements)
 
-The local path where the `dotfiles_repo` will be cloned.
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-dotfiles/blob/main/requirements.txt).
 
-    dotfiles_home: "~"
 
-The home directory where dotfiles will be linked. Generally, the default should work, but in some circumstances, or when running the role as sudo on behalf of another user, you may want to specify the full path.
+## [Context](#context)
 
-    dotfiles_files:
-      - .zshrc
-      - .gitignore
-      - .inputrc
-      - .vimrc
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
-Which files from the dotfiles repository should be linked to the `dotfiles_home`.
+Here is an overview of related roles:
 
-## Dependencies
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-dotfiles/png/requirements.png "Dependencies")
 
-None
+## [Compatibility](#compatibility)
 
-## Example Playbook
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
-    - hosts: localhost
-      roles:
-        - { role: geerlingguy.dotfiles }
+|container|tags|
+|---------|----|
+|ubuntu|all|
+|fedora|all|
+|debian|all|
+|amazon|all|
+|alpine|all|
 
-## License
+The minimum version of Ansible required is 2.2, tests have been done to:
 
-MIT / BSD
+- The previous version.
+- The current version.
+- The development version.
 
-## Author Information
 
-This role was created in 2015 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+
+If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-dotfiles/issues)
+
+## [Changelog](#changelog)
+
+[Role History](https://github.com/buluma/ansible-role-dotfiles/blob/master/CHANGELOG.md)
+
+## [License](#license)
+
+Apache-2.0
+
+## [Author Information](#author-information)
+
+[Michael Buluma](https://buluma.github.io/)

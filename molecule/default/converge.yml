@@ -9,5 +9,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role: buluma.git
     - role: ansible-role-dotfiles

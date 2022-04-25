@@ -21,7 +21,6 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role: buluma.git
     - role: buluma.dotfiles
 ```
 
@@ -44,7 +43,6 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
 The default values for the variables are set in `defaults/main.yml`:
 ```yaml
 ---
-# TODO: localise
 dotfiles_repo: "https://github.com/buluma/dotfiles.git"
 dotfiles_repo_version: master
 dotfiles_repo_accept_hostkey: false

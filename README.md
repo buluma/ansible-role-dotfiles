@@ -4,7 +4,7 @@ Dotfile installation for UNIX/Linux.
 
 |GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
 |------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-dotfiles/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-dotfiles/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-dotfiles/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-dotfiles)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/dotfiles)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/dotfiles)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/pulls/)|
+|[![github](https://github.com/buluma/ansible-role-dotfiles/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-dotfiles/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-dotfiles/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-dotfiles)|[![quality](https://img.shields.io/ansible/quality/58947)](https://galaxy.ansible.com/buluma/dotfiles)|[![downloads](https://img.shields.io/ansible/role/d/58947)](https://galaxy.ansible.com/buluma/dotfiles)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -66,7 +66,7 @@ The following roles are used to prepare a system. You can prepare your system in
 
 | Requirement | GitHub | GitLab |
 |-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
 |[buluma.git](https://galaxy.ansible.com/buluma/git)|[![Build Status GitHub](https://github.com/buluma/ansible-role-git/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-git/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-git/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-git)|
 
 ## [Context](#context)

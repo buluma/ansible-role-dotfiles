@@ -81,7 +81,6 @@ galaxy:
 
 role_testing:
   stage: test
-  allow_failure: true
   needs: []
   script:
     - image=${image} tag=${tag} ansible-galaxy install buluma.dotfiles

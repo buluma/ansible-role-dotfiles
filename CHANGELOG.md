@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/buluma/ansible-role-dotfiles/tree/0.1.1) (2022-05-09)
+
+[Full Changelog](https://github.com/buluma/ansible-role-dotfiles/compare/0.1.0...0.1.1)
+
+**Closed issues:**
+
+- Add to tracker + documentation [\#2](https://github.com/buluma/ansible-role-dotfiles/issues/2)
+
 ## [0.1.0](https://github.com/buluma/ansible-role-dotfiles/tree/0.1.0) (2022-04-25)
 
 [Full Changelog](https://github.com/buluma/ansible-role-dotfiles/compare/f96eb803ab958025101792f719d8d1c202ec0c31...0.1.0)

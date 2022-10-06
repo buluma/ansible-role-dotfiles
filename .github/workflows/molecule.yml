@@ -60,7 +60,7 @@ jobs:
           - image: "debian-systemd"
             tag: "latest"
           - image: "debian-systemd"
-            tag: "bookworm"
+            tag: "buster"
           - image: "amazonlinux"
             tag: "1"
           - image: "amazonlinux"

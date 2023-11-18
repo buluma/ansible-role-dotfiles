@@ -1,4 +1,4 @@
-# [dotfiles](#dotfiles)
+# [Ansible role dotfiles](#dotfiles)
 
 Dotfile installation for UNIX/Linux.
 

@@ -1,10 +1,10 @@
-# [Ansible role dotfiles](#dotfiles)
+# Ansible role [dotfiles](https://galaxy.ansible.com/ui/standalone/roles/buluma/dotfiles/documentation)
 
 Dotfile installation for UNIX/Linux.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-dotfiles/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-dotfiles/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-dotfiles/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-dotfiles/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/dotfiles)](https://galaxy.ansible.com/ui/standalone/roles/buluma/dotfiles/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -111,9 +111,7 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [Author Information](#author-information)
 
-[buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)

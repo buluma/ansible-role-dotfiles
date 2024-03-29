@@ -55,8 +55,6 @@ jobs:
           - image: "docker-molecule-images"
             tag: "lunar"
           - image: "docker-molecule-images"
-            tag: "noble"
-          - image: "docker-molecule-images"
             tag: "37"
           - image: "docker-molecule-images"
             tag: "38"
@@ -70,10 +68,12 @@ jobs:
             tag: "buster"
           - image: "docker-molecule-images"
             tag: "bullseye"
-          - image: "docker-molecule-images"
-            tag: "amazonlinux2023"
-          - image: "docker-molecule-images"
-            tag: "alpine-openrc"
+          - image: "amazonlinux"
+            tag: "1"
+          - image: "amazonlinux"
+            tag: "latest"
+          - image: "alpine"
+            tag: "all"
     steps:
       - name: Checkout Role
         uses: actions/checkout@v4

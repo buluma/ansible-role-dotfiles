@@ -72,8 +72,8 @@ jobs:
             tag: "1"
           - image: "amazonlinux"
             tag: "latest"
-          - image: "alpine"
-            tag: "all"
+          - image: "alpine-openrc"
+            tag: "latest"
     steps:
       - name: Checkout Role
         uses: actions/checkout@v4

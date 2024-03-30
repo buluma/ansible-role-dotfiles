@@ -4,6 +4,28 @@
   gather_facts: false
   become: true
 
+  tasks:
+    - name: Update Package Cache (apt/Ubuntu)
+      tags: always
+      apt:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Update Package Cache (dnf/CentOS)
+      tags: always
+      dnf:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "CentOS"
+
+    - name: Update Package Cache (yum/Amazon)
+      tags: always
+      yum:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "Amazon"
+
   roles:
     - role: buluma.bootstrap
     - role: buluma.git

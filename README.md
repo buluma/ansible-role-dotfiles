@@ -22,6 +22,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
       when: ansible_os_family == 'Debian'
 
   roles:
+    - role: buluma.git
     - role: buluma.dotfiles
 ```
 
@@ -34,9 +35,31 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   gather_facts: false
   become: true
 
+  tasks:
+    - name: Update Package Cache (apt/Ubuntu)
+      tags: always
+      apt:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Update Package Cache (dnf/CentOS)
+      tags: always
+      dnf:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "CentOS"
+
+    - name: Update Package Cache (yum/Amazon)
+      tags: always
+      yum:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "Amazon"
+
   roles:
     - role: buluma.bootstrap
-    - role: buluma.git
+    # - role: buluma.git
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.

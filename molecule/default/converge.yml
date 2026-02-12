@@ -10,4 +10,4 @@
 
   roles:
     - role: buluma.git
-    - role: ansible-role-dotfiles
+    - role: buluma.dotfiles

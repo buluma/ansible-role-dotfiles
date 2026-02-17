@@ -5,7 +5,7 @@ galaxy_info:
   description: 'Dotfile installation for UNIX/Linux.'
   license: Apache-2.0
   company: ShadowNet
-  min_ansible_version: 2.2
+  min_ansible_version: '2.2
   platforms:
     - name: Ubuntu
       versions:

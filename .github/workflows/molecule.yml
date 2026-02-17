@@ -41,13 +41,21 @@ jobs:
       matrix:
         distro:
           - image: "docker-molecule-images"
-            tag: "latest"
+            tag: "plucky"
+          - image: "docker-molecule-images"
+            tag: "ubuntu_latest"
           - image: "docker-molecule-images"
             tag: "jammy"
           - image: "docker-molecule-images"
-            tag: "latest"
+            tag: "fedora_latest"
           - image: "docker-molecule-images"
-            tag: "latest"
+            tag: "fedora42"
+          - image: "docker-molecule-images"
+            tag: "fedora44"
+          - image: "docker-molecule-images"
+            tag: "fedora45"
+          - image: "docker-molecule-images"
+            tag: "debian_latest"
           - image: "docker-molecule-images"
             tag: "bookworm"
           - image: "docker-molecule-images"
@@ -57,7 +65,7 @@ jobs:
           - image: "docker-molecule-images"
             tag: "amazonlinux1"
           - image: "docker-molecule-images"
-            tag: "latest"
+            tag: "alpine-openrc_latest"
     steps:
       - name: checkout
         uses: actions/checkout@v6

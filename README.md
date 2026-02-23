@@ -12,53 +12,53 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - name: Converge
-    hosts: all
-    become: true
+- name: Converge
+  hosts: all
+  become: true
 
-    pre_tasks:
-      - name: Update apt cache.
-        apt: update_cache=true cache_valid_time=600
-        when: ansible_os_family == 'Debian'
+  pre_tasks:
+  - name: Update apt cache.
+    apt: update_cache=true cache_valid_time=600
+    when: ansible_os_family == 'Debian'
 
-    roles:
-      - role: buluma.git
-      - role: buluma.dotfiles
+  roles:
+  - role: buluma.git
+  - role: buluma.dotfiles
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-dotfiles/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - name: Prepare
-    hosts: all
-    gather_facts: false
-    become: true
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  become: true
 
-    tasks:
-      - name: Update Package Cache (apt/Ubuntu)
-        tags: always
-        apt:
-          update_cache: yes
-        changed_when: false
-        when: ansible_distribution == "Ubuntu"
+  tasks:
+  - name: Update Package Cache (apt/Ubuntu)
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "Ubuntu"
 
-      - name: Update Package Cache (dnf/CentOS)
-        tags: always
-        dnf:
-          update_cache: yes
-        changed_when: false
-        when: ansible_distribution == "CentOS"
+  - name: Update Package Cache (dnf/CentOS)
+    tags: always
+    dnf:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "CentOS"
 
-      - name: Update Package Cache (yum/Amazon)
-        tags: always
-        yum:
-          update_cache: yes
-        changed_when: false
-        when: ansible_distribution == "Amazon"
+  - name: Update Package Cache (yum/Amazon)
+    tags: always
+    yum:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "Amazon"
 
-    roles:
-      - role: buluma.bootstrap
+  roles:
+  - role: buluma.bootstrap
     # - role: buluma.git
 ```
 
@@ -77,10 +77,10 @@ dotfiles_repo_local_destination: "~/Documents/dotfiles"
 
 dotfiles_home: "~"
 dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
-  - .vimrc
+- .zshrc
+- .gitignore
+- .inputrc
+- .vimrc
 ```
 
 ## [Requirements](#requirements)

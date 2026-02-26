@@ -77,10 +77,10 @@ dotfiles_repo_local_destination: "~/Documents/dotfiles"
 
 dotfiles_home: "~"
 dotfiles_files:
-- .zshrc
-- .gitignore
-- .inputrc
-- .vimrc
+  - .zshrc
+  - .gitignore
+  - .inputrc
+  - .vimrc
 ```
 
 ## [Requirements](#requirements)

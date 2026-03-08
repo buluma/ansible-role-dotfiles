@@ -2,9 +2,9 @@
 
 Dotfile installation for UNIX/Linux.
 
-|GitHub|GitLab|Downloads|Version|
-|------|------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-dotfiles/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-dotfiles/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-dotfiles/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-dotfiles)|[![downloads](https://img.shields.io/ansible/role/d/buluma/dotfiles)](https://galaxy.ansible.com/buluma/dotfiles)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/releases/)|
+|GitHub|Issues|Pull Requests|Version|Downloads|
+|------|------|-------------|-------|---------|
+|[![github](https://github.com/buluma/ansible-role-dotfiles/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-dotfiles/actions/workflows/molecule.yml)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/pulls/)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-dotfiles.svg)](https://github.com/buluma/ansible-role-dotfiles/releases/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/dotfiles)](https://galaxy.ansible.com/ui/standalone/roles/buluma/dotfiles/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -17,13 +17,13 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   become: true
 
   pre_tasks:
-  - name: Update apt cache.
-    apt: update_cache=true cache_valid_time=600
-    when: ansible_os_family == 'Debian'
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
 
   roles:
-  - role: buluma.git
-  - role: buluma.dotfiles
+    - role: buluma.git
+    - role: buluma.dotfiles
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-dotfiles/blob/master/molecule/default/prepare.yml):
@@ -36,30 +36,30 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   become: true
 
   tasks:
-  - name: Update Package Cache (apt/Ubuntu)
-    tags: always
-    apt:
-      update_cache: yes
-    changed_when: false
-    when: ansible_distribution == "Ubuntu"
+    - name: Update Package Cache (apt/Ubuntu)
+      tags: always
+      apt:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "Ubuntu"
 
-  - name: Update Package Cache (dnf/CentOS)
-    tags: always
-    dnf:
-      update_cache: yes
-    changed_when: false
-    when: ansible_distribution == "CentOS"
+    - name: Update Package Cache (dnf/CentOS)
+      tags: always
+      dnf:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "CentOS"
 
-  - name: Update Package Cache (yum/Amazon)
-    tags: always
-    yum:
-      update_cache: yes
-    changed_when: false
-    when: ansible_distribution == "Amazon"
+    - name: Update Package Cache (yum/Amazon)
+      tags: always
+      yum:
+        update_cache: yes
+      changed_when: false
+      when: ansible_distribution == "Amazon"
 
   roles:
-  - role: buluma.bootstrap
-    # - role: buluma.git
+    - role: buluma.bootstrap
+      # - role: buluma.git
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -91,29 +91,30 @@ dotfiles_files:
 
 The following roles are used to prepare a system. You can prepare your system in another way.
 
-| Requirement | GitHub | GitLab |
-|-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-bootstrap)|
-|[buluma.git](https://galaxy.ansible.com/buluma/git)|[![Build Status GitHub](https://github.com/buluma/ansible-role-git/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-git/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-git/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-git)|
+| Requirement | GitHub |
+|-------------|--------|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|
+|[buluma.git](https://galaxy.ansible.com/buluma/git)|[![Build Status GitHub](https://github.com/buluma/ansible-role-git/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-git/actions)|
 
 ## [Context](#context)
 
 This role is part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
 Here is an overview of related roles:
+
 ![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-dotfiles/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
 
 |container|tags|
 |---------|----|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|all|
-|[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
-|[Debian](https://hub.docker.com/r/buluma/debian)|all|
-|[Amazon](https://hub.docker.com/r/buluma/amazonlinux)|all|
-|[Alpine](https://hub.docker.com/r/buluma/alpine)|all|
+|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
+|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
+|[Amazon](https://hub.docker.com/r/robertdebock/amazonlinux)|all|
+|[Alpine](https://hub.docker.com/r/robertdebock/alpine)|all|
 
 The minimum version of Ansible required is 2.2, tests have been done on:
 
@@ -130,3 +131,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+

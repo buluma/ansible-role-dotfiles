@@ -56,8 +56,6 @@ jobs:
             tag: "bookworm"
           - image: "debian"
             tag: "bullseye"
-          - image: "amazonlinux"
-            tag: "latest"
           - image: "alpine"
             tag: "latest"
     steps:

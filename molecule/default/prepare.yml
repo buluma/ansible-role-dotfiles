@@ -10,21 +10,21 @@
       apt:
         update_cache: yes
       changed_when: false
-      when: ansible_distribution == "Ubuntu"
+      when: ansible_facts.distribution == "Ubuntu"
 
     - name: Update Package Cache (dnf/CentOS)
       tags: always
       dnf:
         update_cache: yes
       changed_when: false
-      when: ansible_distribution == "CentOS"
+      when: ansible_facts.distribution == "CentOS"
 
     - name: Update Package Cache (yum/Amazon)
       tags: always
       yum:
         update_cache: yes
       changed_when: false
-      when: ansible_distribution == "Amazon"
+      when: ansible_facts.distribution == "Amazon"
 
   roles:
     - role: buluma.bootstrap

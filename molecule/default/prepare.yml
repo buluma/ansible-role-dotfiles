@@ -1,31 +1,16 @@
 ---
 - name: Prepare
   hosts: all
-  gather_facts: false
   become: true
+  gather_facts: false
 
-  tasks:
-    - name: Update Package Cache (apt/Ubuntu)
-      tags: always
-      apt:
-        update_cache: yes
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo}"
+      become: false
       changed_when: false
-      when: ansible_facts['distribution'] == "Ubuntu"
-
-    - name: Update Package Cache (dnf/CentOS)
-      tags: always
-      dnf:
-        update_cache: yes
-      changed_when: false
-      when: ansible_facts['distribution'] == "CentOS"
-
-    - name: Update Package Cache (yum/Amazon)
-      tags: always
-      yum:
-        update_cache: yes
-      changed_when: false
-      when: ansible_facts['distribution'] == "Amazon"
+      failed_when: false
 
   roles:
     - role: buluma.bootstrap
-      # - role: buluma.git
+    - role: buluma.git
